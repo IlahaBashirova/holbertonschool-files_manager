@@ -1,9 +1,9 @@
 import redis from 'redis';
 import { promisify } from 'util';
 
-class RedisClient{
+class RedisClient {
   constructor() {
-    this.client = redis.createClient()
+    this.client = redis.createClient();
     this.client.on('error', (err) => {
       console.log(err);
     });
@@ -12,18 +12,21 @@ class RedisClient{
     this.delAsync = promisify(this.client.del).bind(this.client);
   }
 
-    isAlive() {
-        return this.client.connected;
-    }
-    async get(key) {
-        return this.getAsync(key);
-    }
-    async set(key, value, duration) {
-        await this.setexAsync(key, duration, value);
-    }
-    async del(key) {
-        await this.delAsync(key);
-    }
+  isAlive() {
+    return this.client.connected;
+  }
+
+  async get(key) {
+    return this.getAsync(key);
+  }
+
+  async set(key, value, duration) {
+    await this.setexAsync(key, duration, value);
+  }
+
+  async del(key) {
+    await this.delAsync(key);
+  }
 }
 const redisClient = new RedisClient();
 export default redisClient;
