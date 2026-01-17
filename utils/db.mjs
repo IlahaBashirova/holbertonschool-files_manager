@@ -14,16 +14,15 @@ class DBClient {
 
     this.client.connect()
       .then(() => {
-          this.db = this.client.db(database);
+        this.db = this.client.db(database);
       })
       .catch((err) => {
-          console.log(err);
+        console.log(err);
       });
-
 
   }
 
-  isAlive() {
+  isAlive(){
     return !!this.db;
   }
 
