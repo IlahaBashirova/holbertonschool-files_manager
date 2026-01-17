@@ -13,7 +13,8 @@ const routes = (app) => {
   app.get('/connect', AuthController.getConnect);
   app.get('/disconnect', AuthController.getDisconnect);
 
-  app.post('/files', FilesController.postUpload);
+  app.get('/files/:id', FilesController.getShow);
+  app.get('/files', FilesController.getIndex);
 };
 
 export default routes;
