@@ -19,10 +19,9 @@ class DBClient {
       .catch((err) => {
         console.log(err);
       });
-
   }
 
-  isAlive(){
+  isAlive() {
     return !!this.db;
   }
 
