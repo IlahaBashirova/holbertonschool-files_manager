@@ -1,3 +1,4 @@
+// routes/index.js
 import AppController from '../controllers/AppController';
 import UsersController from '../controllers/UsersController';
 import AuthController from '../controllers/AuthController';
@@ -19,6 +20,8 @@ const routes = (app) => {
 
   app.put('/files/:id/publish', FilesController.putPublish);
   app.put('/files/:id/unpublish', FilesController.putUnpublish);
+
+  app.get('/files/:id/data', FilesController.getFile);
 };
 
 export default routes;
