@@ -4,8 +4,8 @@ import routes from './routes/index';
 const app = express();
 const port = process.env.PORT || 5000;
 
-app.use(express.json()); // <-- IMPORTANT for POST JSON bodies
-// Load all routes
+app.use(express.json());
+
 routes(app);
 
 app.listen(port, () => {
