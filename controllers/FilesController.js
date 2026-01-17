@@ -274,7 +274,7 @@ class FilesController {
       }
 
       // Thumbnail support: ?size=500|250|100
-      const size = req.query.size;
+      const { size } = req.query;
       let filePath = file.localPath;
 
       if (size && ['500', '250', '100'].includes(size) && file.type === 'image') {
