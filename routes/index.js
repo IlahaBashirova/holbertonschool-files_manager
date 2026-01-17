@@ -2,7 +2,6 @@ import AppController from '../controllers/AppController';
 import UsersController from '../controllers/UsersController';
 import AuthController from '../controllers/AuthController';
 
-
 const routes = (app) => {
   app.get('/status', AppController.getStatus);
   app.get('/stats', AppController.getStats);
